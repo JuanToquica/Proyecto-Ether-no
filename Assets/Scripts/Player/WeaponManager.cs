@@ -16,6 +16,7 @@ public class WeaponManager : MonoBehaviour
     public Animator gunAnimator;
     public Animator bolilloAnimator;
     public GunShoot gunScript;
+    public BolilloAttack bolilloScript;
 
     private void Awake()
     {
@@ -37,22 +38,22 @@ public class WeaponManager : MonoBehaviour
 
     private IEnumerator HideGunAnimation()
     {
-        currentweapon = Weapon.Bolillo;
-        gunAnimator.SetBool("isGunDrawn", false);
-        yield return new WaitForSeconds(gunAnimator.GetCurrentAnimatorStateInfo(0).length);
-        gun.SetActive(false);
         bolillo.SetActive(true);
+        gunAnimator.SetBool("isGunDrawn", false);
         bolilloAnimator.SetBool("isBolilloDrawn", true);
+        yield return new WaitForSeconds(gunAnimator.GetCurrentAnimatorStateInfo(0).length);
+        currentweapon = Weapon.Bolillo;
+        gun.SetActive(false);       
     }
 
     private IEnumerator HideBolilloAnimation()
     {
-        currentweapon = Weapon.Gun;
-        bolilloAnimator.SetBool("isBolilloDrawn", false);
-        yield return new WaitForSeconds(bolilloAnimator.GetCurrentAnimatorStateInfo(0).length);
-        bolillo.SetActive(false);
         gun.SetActive(true);
+        bolilloAnimator.SetBool("isBolilloDrawn", false);
         gunAnimator.SetBool("isGunDrawn", true);
+        yield return new WaitForSeconds(bolilloAnimator.GetCurrentAnimatorStateInfo(0).length);
+        currentweapon = Weapon.Gun;
+        bolillo.SetActive(false);     
     }
 
     public void Attack()
@@ -63,7 +64,7 @@ public class WeaponManager : MonoBehaviour
         }
         else if (currentweapon == Weapon.Bolillo)
         {
-            Debug.Log("bolillaso");
+            bolilloScript.Attack();
         }
     }
 }

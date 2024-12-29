@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
         {
             WeaponManager.instance.ChangeWeapon();
         }
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetMouseButtonDown(0)) 
         {
             WeaponManager.instance.Attack();
         }

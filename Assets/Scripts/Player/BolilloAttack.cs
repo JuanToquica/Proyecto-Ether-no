@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class BolilloAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator animator;
+    public float attackTime;
 
-    // Update is called once per frame
-    void Update()
+    public void Attack()
+    {
+        animator.SetBool("Attack", true);
+        Invoke("ResetAttack", attackTime);
+    }
+    public void ResetAttack()
+    {
+        animator.SetBool("Attack", false);
+    }
+    private void OnCollisionEnter(Collision collision)
     {
         
     }
