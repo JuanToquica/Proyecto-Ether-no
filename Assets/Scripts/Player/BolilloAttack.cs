@@ -16,8 +16,11 @@ public class BolilloAttack : MonoBehaviour
     {
         animator.SetBool("Attack", false);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Enemy") || animator.GetBool("Attack"))
+        {
+            Debug.Log("Golpe a enemigo");
+        }
     }
 }

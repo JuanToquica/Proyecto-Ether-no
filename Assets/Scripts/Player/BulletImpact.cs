@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BulletImpact : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Impacto contra enemigo");
             Destroy(gameObject);
