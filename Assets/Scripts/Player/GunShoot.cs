@@ -8,12 +8,19 @@ public class GunShoot : MonoBehaviour
     public GameObject bullet;
     public float shootForce = 3000;
     public float range;
-    public float shootRateTime;
+    public float shootTime = 0.5f;
+    public float nextFireTime;
+    public float destroyBulletTime = 2;
 
 
     public void Shoot()
     {
-        GameObject newBullet = Instantiate(bullet,spawnPoint.position,spawnPoint.rotation);
-        newBullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward*shootForce);
+        if (Time.time>=nextFireTime)
+        {
+            GameObject newBullet = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
+            newBullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shootForce);
+            nextFireTime = Time.time + shootTime;
+            Destroy(newBullet, destroyBulletTime);
+        }
     }
 }

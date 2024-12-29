@@ -60,7 +60,6 @@ public class WeaponManager : MonoBehaviour
         if (currentweapon == Weapon.Gun)
         {
             gunScript.Shoot();
-            Debug.Log("disparo con arma");
         }
         else if (currentweapon == Weapon.Bolillo)
         {

@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 198610914}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -848,9 +848,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 780028165}
   bullet: {fileID: 5100593614991279179, guid: 0e0cb0fbef1e864478f17f3065c807bb, type: 3}
-  shootForce: 3000
+  shootForce: 5000
   range: 0
-  shootRateTime: 0
+  shootTime: 0.5
+  nextFireTime: 0
+  destroyBulletTime: 2
 --- !u!1 &644990350
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +870,7 @@ GameObject:
   - component: {fileID: 644990356}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
