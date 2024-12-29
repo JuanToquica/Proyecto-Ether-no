@@ -41,7 +41,6 @@ public class WeaponManager : MonoBehaviour
         currentweapon = Weapon.Bolillo;
         gunAnimator.SetBool("isGunDrawn", false);
         yield return new WaitForSeconds(gunAnimator.GetCurrentAnimatorStateInfo(0).length);
-        Debug.Log("gun: "+ gunAnimator.GetCurrentAnimatorStateInfo(0).length);
         gun.SetActive(false);
         bolillo.SetActive(true);
         bolilloAnimator.SetBool("isBolilloDrawn", true);
@@ -51,8 +50,8 @@ public class WeaponManager : MonoBehaviour
     {
         currentweapon = Weapon.Gun;
         bolilloAnimator.SetBool("isBolilloDrawn", false);
-        yield return new WaitForSeconds(bolilloAnimator.GetCurrentAnimatorStateInfo(0).length);
-        Debug.Log("bolillo: "+ bolilloAnimator.GetCurrentAnimatorStateInfo(0).length);
+        yield return null; //Espera al siguiente frame para obtener la info de  la animacionn que es y no la anterior
+        yield return new WaitForSeconds(bolilloAnimator.GetCurrentAnimatorStateInfo(0).length);     
         bolillo.SetActive(false);
         gun.SetActive(true);
         gunAnimator.SetBool("isGunDrawn", true);
