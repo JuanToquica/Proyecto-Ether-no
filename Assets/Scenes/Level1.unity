@@ -659,8 +659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1424539076}
-  xSensitivity: 30
-  ySensitivy: 30
+  xSensitivity: 10
+  ySensitivy: 10
 --- !u!20 &1424539076 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
