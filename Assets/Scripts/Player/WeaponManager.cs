@@ -6,9 +6,6 @@ public enum Weapon { Gun, Bolillo, Changing}
 
 public class WeaponManager : MonoBehaviour
 {
-    public static WeaponManager instance;
-    
-
     public Weapon currentweapon = Weapon.Gun;
     public GameObject gun;
     public GameObject bolillo;
@@ -17,18 +14,6 @@ public class WeaponManager : MonoBehaviour
     public Animator bolilloAnimator;
     public GunShoot gunScript;
     public BolilloAttack bolilloScript;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void ChangeWeapon()
     {

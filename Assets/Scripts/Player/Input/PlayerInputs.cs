@@ -71,6 +71,24 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""b48daf65-6534-49be-b9f2-9b68bb9fc576"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Change"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbdd1451-b5aa-483d-9a72-8da807504180"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +289,28 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73b080ec-c60d-4c55-943f-c43acfe41a00"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0afaead1-9ed3-4040-b2cb-b1a3451b272c"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -284,6 +324,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_DePie_Sprint = m_DePie.FindAction("Sprint", throwIfNotFound: true);
         m_DePie_Look = m_DePie.FindAction("Look", throwIfNotFound: true);
         m_DePie_Crouch = m_DePie.FindAction("Crouch", throwIfNotFound: true);
+        m_DePie_Fire = m_DePie.FindAction("Fire", throwIfNotFound: true);
+        m_DePie_Change = m_DePie.FindAction("Change", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -350,6 +392,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_DePie_Sprint;
     private readonly InputAction m_DePie_Look;
     private readonly InputAction m_DePie_Crouch;
+    private readonly InputAction m_DePie_Fire;
+    private readonly InputAction m_DePie_Change;
     public struct DePieActions
     {
         private @PlayerInputs m_Wrapper;
@@ -359,6 +403,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_DePie_Sprint;
         public InputAction @Look => m_Wrapper.m_DePie_Look;
         public InputAction @Crouch => m_Wrapper.m_DePie_Crouch;
+        public InputAction @Fire => m_Wrapper.m_DePie_Fire;
+        public InputAction @Change => m_Wrapper.m_DePie_Change;
         public InputActionMap Get() { return m_Wrapper.m_DePie; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -383,6 +429,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
+            @Change.started += instance.OnChange;
+            @Change.performed += instance.OnChange;
+            @Change.canceled += instance.OnChange;
         }
 
         private void UnregisterCallbacks(IDePieActions instance)
@@ -402,6 +454,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
+            @Change.started -= instance.OnChange;
+            @Change.performed -= instance.OnChange;
+            @Change.canceled -= instance.OnChange;
         }
 
         public void RemoveCallbacks(IDePieActions instance)
@@ -426,5 +484,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
+        void OnChange(InputAction.CallbackContext context);
     }
 }
