@@ -20,8 +20,7 @@ public class PlayerLook : MonoBehaviour
         //aplicar esto al transform de la camara del player
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         //luego se rota al player a donde esta mirando
-        transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
-        
+        transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);       
     }
 
     // Update is called once per frame
