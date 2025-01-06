@@ -9,7 +9,11 @@ public class BulletImpact : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Impacto contra enemigo");
-            Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Impacto contra Player");          
+        }
+        Destroy(gameObject);
     }
 }
