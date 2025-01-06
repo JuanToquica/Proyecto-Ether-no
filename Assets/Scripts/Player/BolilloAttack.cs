@@ -6,11 +6,15 @@ public class BolilloAttack : MonoBehaviour
 {
     public Animator animator;
     public float attackTime;
+    public string targetTag;
 
     public void Attack()
     {
-        animator.SetBool("Attack", true);
-        Invoke("ResetAttack", attackTime);
+        if (!animator.GetBool("Attack"))
+        {
+            animator.SetBool("Attack", true);
+            Invoke("ResetAttack", attackTime);
+        }       
     }
     public void ResetAttack()
     {
@@ -18,9 +22,9 @@ public class BolilloAttack : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") && animator.GetBool("Attack"))
+        if (other.gameObject.CompareTag(targetTag) && animator.GetBool("Attack"))
         {
-            Debug.Log("Golpe a enemigo");
+            Debug.Log($"Golpe a {targetTag}");
         }
     }
 }

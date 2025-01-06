@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 6148297761819136226}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17370118, y: -0, z: -0, w: 0.98479843}
-  m_LocalPosition: {x: 0.451, y: 0.45000005, z: 0.46099997}
+  m_LocalPosition: {x: 0.45, y: 0.45000005, z: 0.46}
   m_LocalScale: {x: 0.1, y: 0.8, z: 0.09447122}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -545,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2079680041535289365}
   attackTime: 0.5
+  targetTag: Enemy
 --- !u!54 &7600089620621922964
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -567,8 +568,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
