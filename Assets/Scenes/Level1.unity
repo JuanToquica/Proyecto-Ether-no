@@ -271,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 4094693157614685579, guid: 8188d849f0d7b824cbdfe2ff12c085c0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8716974
+      value: 5.856
       objectReference: {fileID: 0}
     - target: {fileID: 4094693157614685579, guid: 8188d849f0d7b824cbdfe2ff12c085c0,
         type: 3}
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 4094693157614685579, guid: 8188d849f0d7b824cbdfe2ff12c085c0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0407763
+      value: -3.853
       objectReference: {fileID: 0}
     - target: {fileID: 4094693157614685579, guid: 8188d849f0d7b824cbdfe2ff12c085c0,
         type: 3}
@@ -973,7 +973,7 @@ PrefabInstance:
     - target: {fileID: 3961696842748167646, guid: 3c16ab743e49fff4bb9f8a7682bb5de6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9262147
+      value: -9.99
       objectReference: {fileID: 0}
     - target: {fileID: 3961696842748167646, guid: 3c16ab743e49fff4bb9f8a7682bb5de6,
         type: 3}
@@ -983,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 3961696842748167646, guid: 3c16ab743e49fff4bb9f8a7682bb5de6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3844974
+      value: -6.36
       objectReference: {fileID: 0}
     - target: {fileID: 3961696842748167646, guid: 3c16ab743e49fff4bb9f8a7682bb5de6,
         type: 3}
@@ -1030,6 +1030,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c16ab743e49fff4bb9f8a7682bb5de6, type: 3}
+--- !u!1 &4030857013954104366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7627434828387243937, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4271968879073140821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4033900330762255639 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6616799490580827535, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4271968879073140821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4033900330762255640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6653697618701967449, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4271968879073140821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030857013954104366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6a06dabbd597c44aa6728cf7bfb0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4271968879073140821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,11 +1112,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6131240658176331995, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131240658176331995, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131240658176331995, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6269999
+      objectReference: {fileID: 0}
     - target: {fileID: 8551999065246347982, guid: 46c9744aff04d1b419a66cfa75be7d8a,
         type: 3}
       propertyPath: m_Name
       value: Jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 8994724168703971186, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+        type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 4030857013954104366}
+    - target: {fileID: 8994724168703971186, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+        type: 3}
+      propertyPath: gunScript
+      value: 
+      objectReference: {fileID: 4033900330762255640}
+    - target: {fileID: 8994724168703971186, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+        type: 3}
+      propertyPath: gunAnimator
+      value: 
+      objectReference: {fileID: 4033900330762255639}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
