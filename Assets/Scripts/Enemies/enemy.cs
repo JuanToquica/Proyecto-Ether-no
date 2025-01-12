@@ -20,6 +20,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void ReceiveShoot()
+    {
+        healthBar.TakeDamage(damageAmount);
+        if (healthBar.health <= 0)
+        {
+            Die();
+        }
+    }
+
     void Die()
     {
         Debug.Log("Enemigo derrotado");

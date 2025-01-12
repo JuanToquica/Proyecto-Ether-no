@@ -5,7 +5,6 @@ using UnityEngine;
 public class BildBoard : MonoBehaviour
 {
     public Transform cam;
-    // Start is called before the first frame update
     private void LateUpdate()
     {
         transform.LookAt(transform.position + cam.forward);

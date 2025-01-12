@@ -27,6 +27,12 @@ public class GunShoot : MonoBehaviour
                 if (impact.rigidbody != null && impact.transform.CompareTag("Enemy"))
                 {
                     Debug.Log("Impacto contra enemigo");
+                    Enemy enemy = impact.transform.GetComponent<Enemy>();
+
+                    if (enemy != null)
+                    {
+                        enemy.ReceiveShoot();
+                    }
                 }
             }                 
         }

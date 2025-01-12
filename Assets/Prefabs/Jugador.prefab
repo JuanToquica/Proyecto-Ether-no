@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 8341858321815046701}
   m_Layer: 0
   m_Name: Bolillo
-  m_TagString: Enemy
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
