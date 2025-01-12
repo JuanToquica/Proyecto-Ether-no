@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 3472918558572203520}
   - component: {fileID: 5833616408283485357}
   - component: {fileID: 682465422752725838}
-  - component: {fileID: 6880532935004811905}
   m_Layer: 0
   m_Name: Gun (1)
   m_TagString: Untagged
@@ -138,25 +137,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6880532935004811905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7162807952015359061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6a06dabbd597c44aa6728cf7bfb0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 7919601278612252193}
-  bullet: {fileID: 5100593614991279179, guid: 0e0cb0fbef1e864478f17f3065c807bb, type: 3}
-  shootForce: 3500
-  range: 0
-  shootTime: 0.5
-  nextFireTime: 0
-  destroyBulletTime: 2
 --- !u!1 &7207995704042462772
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4094693157614685579
 Transform:
   m_ObjectHideFlags: 0
@@ -307,5 +287,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  gunScript: {fileID: 6880532935004811905}
+  gunScript: {fileID: 0}
   shootTime: 3

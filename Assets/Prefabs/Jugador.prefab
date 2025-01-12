@@ -405,37 +405,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &5920499162909662623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 142778898975257814}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &142778898975257814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5920499162909662623}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0006, y: 0.1396, z: 0.1842}
-  m_LocalScale: {x: 2.5, y: 3.75, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6131240658176331995}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5991065346601072279
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,8 +747,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6131240658176331995}
-  - component: {fileID: 6653697618701967449}
   - component: {fileID: 6616799490580827535}
+  - component: {fileID: 6149048063282544755}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -796,34 +765,14 @@ Transform:
   m_GameObject: {fileID: 7627434828387243937}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.244, y: 0.26599985, z: 0.62699986}
+  m_LocalPosition: {x: 0.3, y: 0.33, z: 0.6269999}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 142778898975257814}
   - {fileID: 4327750827156718496}
   - {fileID: 2679121404034432830}
   m_Father: {fileID: 6722766845781125302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6653697618701967449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7627434828387243937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6a06dabbd597c44aa6728cf7bfb0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 142778898975257814}
-  bullet: {fileID: 5100593614991279179, guid: 0e0cb0fbef1e864478f17f3065c807bb, type: 3}
-  shootForce: 3500
-  range: 0
-  shootTime: 0.5
-  nextFireTime: 0
-  destroyBulletTime: 2
 --- !u!95 &6616799490580827535
 Animator:
   serializedVersion: 5
@@ -845,6 +794,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6149048063282544755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7627434828387243937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6a06dabbd597c44aa6728cf7bfb0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6616799490580827535}
+  playerCamera: {fileID: 3373613502296260461}
+  range: 50
+  shootTime: 0.3
+  nextFireTime: 0
 --- !u!1 &7987058336395666073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,10 +1130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentweapon: 0
-  gun: {fileID: 0}
+  gun: {fileID: 7627434828387243937}
   bolillo: {fileID: 6148297761819136226}
   shield: {fileID: 377340558489833992}
-  gunAnimator: {fileID: 0}
+  gunAnimator: {fileID: 6616799490580827535}
   bolilloAnimator: {fileID: 2079680041535289365}
-  gunScript: {fileID: 0}
+  gunScript: {fileID: 6149048063282544755}
   bolilloScript: {fileID: 5100585551930814911}
