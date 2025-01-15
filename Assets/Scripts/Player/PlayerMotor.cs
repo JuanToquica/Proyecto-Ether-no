@@ -16,6 +16,8 @@ public class PlayerMotor : MonoBehaviour
     private bool agacharse = false;
     private bool lerpCrouch = false;
     private bool corriendo = false;
+    public int Vida = 100;
+    public GameObject Shield;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,5 +74,27 @@ public class PlayerMotor : MonoBehaviour
         tiempoAgachado = 0;
         lerpCrouch = true;
         Debug.Log("agachado: "+agacharse);
+    }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Vida"))
+        {
+            Vida += 10;
+            Destroy(hit.gameObject);
+
+        }
+        if (hit.gameObject.CompareTag("Shield"))
+        {
+            StartCoroutine(corrutinaescudo());
+            Destroy(hit.gameObject);
+
+        }
+    }
+    IEnumerator corrutinaescudo()
+    {
+        Shield.SetActive(true);
+        yield return new WaitForSeconds(5);
+        Shield.SetActive(false);
+
     }
 }
