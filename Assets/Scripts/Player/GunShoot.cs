@@ -14,9 +14,7 @@ public class GunShoot : MonoBehaviour
     public ParticleSystem shootVFX;
     public GameObject impactParticles;
     public GameObject bulletHole;
-    public AudioSource audioSource;
-    public AudioClip shootSound;
-    public AudioClip rechargeSound;
+
 
     public void Shoot()
     {      
@@ -24,8 +22,7 @@ public class GunShoot : MonoBehaviour
         {
             FireAnimation();
             shootVFX.Play();
-            audioSource.clip = shootSound;
-            audioSource.Play();
+            AudioManager.instance.PlayClip(AudioManager.instance.shootClip); //Ejecutar sonido de disparo
             nextFireTime = Time.time + shootTime;
             Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
             RaycastHit impact;
