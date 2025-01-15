@@ -89,6 +89,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e08e7d5-38ce-4e7e-afca-1a82811d9e4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -311,6 +320,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Change"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ccc33b2-5464-4bb6-8597-df22d3e51a6d"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -326,6 +346,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_DePie_Crouch = m_DePie.FindAction("Crouch", throwIfNotFound: true);
         m_DePie_Fire = m_DePie.FindAction("Fire", throwIfNotFound: true);
         m_DePie_Change = m_DePie.FindAction("Change", throwIfNotFound: true);
+        m_DePie_Reload = m_DePie.FindAction("Reload", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -394,6 +415,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_DePie_Crouch;
     private readonly InputAction m_DePie_Fire;
     private readonly InputAction m_DePie_Change;
+    private readonly InputAction m_DePie_Reload;
     public struct DePieActions
     {
         private @PlayerInputs m_Wrapper;
@@ -405,6 +427,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_DePie_Crouch;
         public InputAction @Fire => m_Wrapper.m_DePie_Fire;
         public InputAction @Change => m_Wrapper.m_DePie_Change;
+        public InputAction @Reload => m_Wrapper.m_DePie_Reload;
         public InputActionMap Get() { return m_Wrapper.m_DePie; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -435,6 +458,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Change.started += instance.OnChange;
             @Change.performed += instance.OnChange;
             @Change.canceled += instance.OnChange;
+            @Reload.started += instance.OnReload;
+            @Reload.performed += instance.OnReload;
+            @Reload.canceled += instance.OnReload;
         }
 
         private void UnregisterCallbacks(IDePieActions instance)
@@ -460,6 +486,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Change.started -= instance.OnChange;
             @Change.performed -= instance.OnChange;
             @Change.canceled -= instance.OnChange;
+            @Reload.started -= instance.OnReload;
+            @Reload.performed -= instance.OnReload;
+            @Reload.canceled -= instance.OnReload;
         }
 
         public void RemoveCallbacks(IDePieActions instance)
@@ -486,5 +515,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnChange(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
 }

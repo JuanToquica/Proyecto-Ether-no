@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
         dePie.Change.started += ctx => weaponManager.ChangeWeapon(); //Cambiar arma
         dePie.Fire.started += ctx => weaponManager.Attack(); //Atacar
         dePie.Crouch.performed += ctx => motor.Crouch();
+        dePie.Reload.started += ctx => weaponManager.ReloadGun(); //Recargar arma
     }
 
     
