@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioSource;
 
     public AudioClip shootClip;
-    public AudioClip rechargeClip;
+    public AudioClip reloadClip;
 
     private void Awake()
     {

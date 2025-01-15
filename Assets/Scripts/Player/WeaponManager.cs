@@ -55,4 +55,9 @@ public class WeaponManager : MonoBehaviour
             bolilloScript.Attack();
         }
     }
+    
+    public void ReloadGun()
+    {
+        StartCoroutine(gunScript.GunReload());
+    }
 }
