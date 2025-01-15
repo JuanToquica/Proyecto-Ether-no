@@ -11,12 +11,21 @@ public class GunShoot : MonoBehaviour
     public float shootTime = 0.5f;
     public float nextFireTime;
 
+    public ParticleSystem shootVFX;
+    public GameObject impactParticles;
+    public GameObject bulletHole;
+    public AudioSource audioSource;
+    public AudioClip shootSound;
+    public AudioClip rechargeSound;
 
     public void Shoot()
     {      
         if (Time.time>=nextFireTime && !animator.GetBool("fire"))
         {
             FireAnimation();
+            shootVFX.Play();
+            audioSource.clip = shootSound;
+            audioSource.Play();
             nextFireTime = Time.time + shootTime;
             Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
             RaycastHit impact;
@@ -24,6 +33,12 @@ public class GunShoot : MonoBehaviour
             
             if (Physics.Raycast(ray, out impact, range, ~0, QueryTriggerInteraction.Ignore)) //Lanza el rayo e ignora los triggers
             {
+                Instantiate(impactParticles, impact.point, Quaternion.LookRotation(impact.normal));
+                if (impact.transform.CompareTag("Environment"))
+                {                  
+                    Vector3 offset = impact.normal * 0.01f; //Para que la textura no se laguee
+                    Instantiate(bulletHole, impact.point+offset, Quaternion.LookRotation(impact.normal));
+                }
                 if (impact.rigidbody != null && impact.transform.CompareTag("Enemy"))
                 {
                     Debug.Log("Impacto contra enemigo");
