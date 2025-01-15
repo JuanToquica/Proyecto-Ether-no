@@ -30,7 +30,6 @@ public class HealthBar : MonoBehaviour
         {
             easeHealthBar.value = Mathf.Lerp(easeHealthBar.value, health, lerpSpeed);
         }
-        Debug.Log(this.name);
     }
 
     public void TakeDamage(float damage)
