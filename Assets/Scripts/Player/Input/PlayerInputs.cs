@@ -98,6 +98,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Protect"",
+                    ""type"": ""Button"",
+                    ""id"": ""c44ac481-fe10-4452-9831-baff2283f0a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -279,28 +288,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""92d13fec-ae95-4c89-962e-3c8407988773"",
-                    ""path"": ""<Keyboard>/leftCtrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7040c615-9de7-4bb0-ae6d-e233b9975419"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""73b080ec-c60d-4c55-943f-c43acfe41a00"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -331,6 +318,39 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92d13fec-ae95-4c89-962e-3c8407988773"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7040c615-9de7-4bb0-ae6d-e233b9975419"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51eca409-1c40-4c2e-8caf-964cc4c2255a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Protect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -347,6 +367,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_DePie_Fire = m_DePie.FindAction("Fire", throwIfNotFound: true);
         m_DePie_Change = m_DePie.FindAction("Change", throwIfNotFound: true);
         m_DePie_Reload = m_DePie.FindAction("Reload", throwIfNotFound: true);
+        m_DePie_Protect = m_DePie.FindAction("Protect", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -416,6 +437,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_DePie_Fire;
     private readonly InputAction m_DePie_Change;
     private readonly InputAction m_DePie_Reload;
+    private readonly InputAction m_DePie_Protect;
     public struct DePieActions
     {
         private @PlayerInputs m_Wrapper;
@@ -428,6 +450,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_DePie_Fire;
         public InputAction @Change => m_Wrapper.m_DePie_Change;
         public InputAction @Reload => m_Wrapper.m_DePie_Reload;
+        public InputAction @Protect => m_Wrapper.m_DePie_Protect;
         public InputActionMap Get() { return m_Wrapper.m_DePie; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -461,6 +484,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
+            @Protect.started += instance.OnProtect;
+            @Protect.performed += instance.OnProtect;
+            @Protect.canceled += instance.OnProtect;
         }
 
         private void UnregisterCallbacks(IDePieActions instance)
@@ -489,6 +515,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
+            @Protect.started -= instance.OnProtect;
+            @Protect.performed -= instance.OnProtect;
+            @Protect.canceled -= instance.OnProtect;
         }
 
         public void RemoveCallbacks(IDePieActions instance)
@@ -516,5 +545,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnChange(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnProtect(InputAction.CallbackContext context);
     }
 }

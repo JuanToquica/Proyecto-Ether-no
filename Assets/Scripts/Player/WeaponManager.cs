@@ -12,8 +12,33 @@ public class WeaponManager : MonoBehaviour
     public GameObject shield;
     public Animator gunAnimator;
     public Animator bolilloAnimator;
+    public Animator shieldAnimator;
     public GunShoot gunScript;
     public BolilloAttack bolilloScript;
+    public bool isShieldDraw = false;
+    public float stamina;
+    public float maxStamina;
+
+
+    private void Update()
+    {
+        if(isShieldDraw)
+        {
+            stamina-= 1f * Time.deltaTime;
+            if(stamina < 0)
+            {
+                StartCoroutine(DrawAndHideShield());
+                stamina = 0;
+            }
+        }
+        else
+        {
+           if (stamina < maxStamina)
+           {
+                stamina += 1f * Time.deltaTime;
+            }           
+        }
+    }
 
     public void ChangeWeapon()
     {
@@ -59,5 +84,23 @@ public class WeaponManager : MonoBehaviour
     public void ReloadGun()
     {
         StartCoroutine(gunScript.GunReload());
+    }
+
+    public IEnumerator DrawAndHideShield()
+    {
+        if (!isShieldDraw && stamina > 5)
+        {
+            shield.SetActive(true);
+            shieldAnimator.SetBool("isShieldDraw", true);
+            isShieldDraw = true;
+        }
+        else if (isShieldDraw)
+        {
+            shieldAnimator.SetBool("isShieldDraw", false);
+            isShieldDraw = false;
+            yield return new WaitForSeconds(shieldAnimator.GetCurrentAnimatorStateInfo(0).length);
+            shield.SetActive(false);           
+        }
+             
     }
 }
