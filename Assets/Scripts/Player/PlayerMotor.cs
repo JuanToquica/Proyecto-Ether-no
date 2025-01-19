@@ -8,15 +8,19 @@ public class PlayerMotor : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocidadJugador;
     public float velocidad = 5f;
+    public float velocityWithShield;
+    public float normalVelocity = 5f;
     public float gravedad = -9.8f;
     public float alturaSalto = 3f;
     public float tiempoAgachado = 1f;
+    public WeaponManager weaponManager;
 
     private bool IsGrounded;
     private bool agacharse = false;
     private bool lerpCrouch = false;
     private bool corriendo = false;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -35,6 +39,14 @@ public class PlayerMotor : MonoBehaviour
                 lerpCrouch = false;
                 tiempoAgachado = 0f;
             }
+        }
+        if (weaponManager.isShieldDraw)
+        {
+            velocidad = velocityWithShield;
+        }
+        else
+        {
+            velocidad = normalVelocity;
         }
     }
     //Se reciben los inputs del input manager y se aplican al Character controller
@@ -62,9 +74,12 @@ public class PlayerMotor : MonoBehaviour
 
     public void Sprint(bool isSprinting)
     {
-        corriendo = isSprinting;
-        velocidad = corriendo ? 8f : 5f; // Cambia la velocidad dependiendo del estado de sprint
-        Debug.Log("corriendo con velocidad: "+velocidad);
+        if (!weaponManager.isShieldDraw)
+        {
+            corriendo = isSprinting;
+            normalVelocity = corriendo ? 8f : 5f; // Cambia la velocidad dependiendo del estado de sprint
+            Debug.Log("corriendo con velocidad: " + velocidad);
+        }      
     }
     public void Crouch()
     {
