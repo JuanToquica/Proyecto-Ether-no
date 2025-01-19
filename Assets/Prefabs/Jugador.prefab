@@ -621,6 +621,8 @@ MonoBehaviour:
   animator: {fileID: 2079680041535289365}
   attackTime: 0.5
   targetTag: Enemy
+  ParticleSystem: {fileID: 5503505460791601945, guid: 74c549d1b06b6b140a1fd9536eea637f,
+    type: 3}
 --- !u!54 &7600089620621922964
 Rigidbody:
   m_ObjectHideFlags: 0
