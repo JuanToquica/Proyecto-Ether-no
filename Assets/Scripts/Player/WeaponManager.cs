@@ -91,7 +91,7 @@ public class WeaponManager : MonoBehaviour
         if (!isShieldDraw && stamina > 5)
         {
             shield.SetActive(true);
-            shieldAnimator.SetBool("isShieldDraw", true);
+            shieldAnimator.SetBool("isShieldDraw", true);   
             isShieldDraw = true;
         }
         else if (isShieldDraw)

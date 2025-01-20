@@ -1354,6 +1354,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1084145693}
+    - target: {fileID: 2178741261840207600, guid: 3c16ab743e49fff4bb9f8a7682bb5de6,
+        type: 3}
+      propertyPath: ParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2895084442137475680, guid: 3c16ab743e49fff4bb9f8a7682bb5de6,
         type: 3}
       propertyPath: cam
