@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - weapon
   - Environment
+  - bridge
   layers:
   - Default
   - TransparentFX
