@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Barrio.unity
     guid: 77de60bc100beed43aec8877bd2ceaff
+  - enabled: 1
+    path: Assets/Scenes/Spain.unity
+    guid: 918e6772d7235504289d0eaf4dd8451f
+  - enabled: 1
+    path: Assets/Scenes/CatedralJail.unity
+    guid: 4a77a783eaf2b2e4789cf22c681192df
   m_configObjects: {}
