@@ -183,22 +183,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.510994
+      value: 57.880997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.36
+      value: 2.4899995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.336
+      value: 38.465996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.120341726
+      value: 0.101907685
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
@@ -208,7 +208,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9927325
+      value: -0.9947939
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
@@ -223,7 +223,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 553.824
+      value: 551.698
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
       propertyPath: m_Name
-      value: Brick_House_2.80
+      value: Brick_House
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a08df360d734c4043b496ce77812d2d6,
         type: 3}
@@ -288,5 +288,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.229337, y: 10.218997, z: 9.886133}
-  m_Center: {x: -0.020653732, y: 5.1094985, z: -0.2993636}
+  m_Size: {x: 10.89571, y: 10.218997, z: 9.2592325}
+  m_Center: {x: -0.038778313, y: 5.1094985, z: -0.16123606}
