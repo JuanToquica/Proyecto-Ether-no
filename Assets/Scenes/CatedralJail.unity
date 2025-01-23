@@ -1831,46 +1831,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
+    - target: {fileID: 8429099338520425980, guid: 46c9744aff04d1b419a66cfa75be7d8a,
         type: 3}
-      propertyPath: field of view
-      value: 71
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
-        type: 3}
-      propertyPath: m_FocalLength
-      value: 16.82338
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
-        type: 3}
-      propertyPath: far clip plane
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
-        type: 3}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373613502296260461, guid: 46c9744aff04d1b419a66cfa75be7d8a,
-        type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547611897548862324, guid: 46c9744aff04d1b419a66cfa75be7d8a,
-        type: 3}
-      propertyPath: m_RendererIndex
-      value: -1
-      objectReference: {fileID: 0}
+      propertyPath: reloadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e041a68761d4a7438f99a74f93c5a1d, type: 3}
     - target: {fileID: 8551999065246347982, guid: 46c9744aff04d1b419a66cfa75be7d8a,
         type: 3}
       propertyPath: m_Name

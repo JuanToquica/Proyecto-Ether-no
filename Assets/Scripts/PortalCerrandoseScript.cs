@@ -7,6 +7,8 @@ public class PortalCerrandoseScript : MonoBehaviour
 {
     public ParticleSystem portal;
     public ParticleSystem portalCerrandose;
+    public AudioSource portalSound;
+    public AudioSource portalExplode;
 
     void Start()
     {
@@ -17,9 +19,14 @@ public class PortalCerrandoseScript : MonoBehaviour
     private IEnumerator VfxPortalCerrandose()
     {
         portal.Play();
+        portalSound.Play();
         yield return new WaitForSeconds(4.3f);
         portalCerrandose.Play();
-        portal.Stop();  
+        portal.Stop();
+        yield return new WaitForSeconds(0.5f);
+        portalExplode.Play();
+        yield return new WaitForSeconds(0.5f);
+        portalSound.Stop();
     }
 
   

@@ -18,7 +18,7 @@ public class PlayerMotor : MonoBehaviour
     private bool IsGrounded;
     private bool agacharse = false;
     private bool lerpCrouch = false;
-    private bool corriendo = false;
+    public bool corriendo = false;
     
 
     void Start()
@@ -48,6 +48,7 @@ public class PlayerMotor : MonoBehaviour
         {
             velocidad = normalVelocity;
         }
+        
     }
     //Se reciben los inputs del input manager y se aplican al Character controller
     public void ProcessMoove(Vector2 input)
@@ -62,6 +63,8 @@ public class PlayerMotor : MonoBehaviour
             velocidadJugador.y = -2f;
         }
         controller.Move(velocidadJugador * Time.deltaTime);
+        if (direccionMovimiento.magnitude > 0f) AudioManager.instance.StartStepSound();
+        else AudioManager.instance.StopStepSound();
     }
     public void Jump()
     {

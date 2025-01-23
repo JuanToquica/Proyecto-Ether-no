@@ -26,6 +26,7 @@ public class GunShoot : MonoBehaviour
             {
                 StartAnimation("fire");
                 shootVFX.Play();
+                AudioManager.instance.audioSource.pitch = 1f;
                 AudioManager.instance.PlayClip(AudioManager.instance.shootClip); //Ejecutar sonido de disparo
                 nextFireTime = Time.time + shootTime;
                 ammo--;
@@ -91,6 +92,7 @@ public class GunShoot : MonoBehaviour
         if (ammo < gunCapacity && !animator.GetBool("isOutOfAmmo"))
         {   
             StartAnimation("isOutOfAmmo");
+            AudioManager.instance.audioSource.pitch = 0.5f;
             AudioManager.instance.PlayClip(AudioManager.instance.reloadClip);
             yield return new WaitForSeconds(1.51f);
             ammo = gunCapacity;          
