@@ -9,6 +9,7 @@ public class BolilloAttack : MonoBehaviour
     public string targetTag;
     public GameObject ParticleSystem;
     private GameObject slash;
+    public Transform jugador;
 
     public void Attack()
     {
@@ -35,8 +36,7 @@ public class BolilloAttack : MonoBehaviour
         Vector3 pos = transform.position + new Vector3(-0.58f,-0.51f,0.131f);
         Quaternion rot = transform.rotation * Quaternion.Euler(-52.4f,-3f,59.4f);
         slash = GameObject.Instantiate(ParticleSystem,pos,rot);
-        Transform weaponTransform = transform.parent;
-        slash.transform.SetParent(weaponTransform, true);
+        slash.transform.SetParent(jugador, true);
         slash.SetActive(false);
     }
 
@@ -45,4 +45,8 @@ public class BolilloAttack : MonoBehaviour
         slash.SetActive(true);
     }
 
+    public void SlashSound()
+    {
+        AudioManager.instance.PlayClip(AudioManager.instance.Bolillaso);
+    }
 }

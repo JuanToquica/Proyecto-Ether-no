@@ -518,6 +518,7 @@ MonoBehaviour:
   targetTag: Enemy
   ParticleSystem: {fileID: 5503505460791601945, guid: 74c549d1b06b6b140a1fd9536eea637f,
     type: 3}
+  jugador: {fileID: 1182655338606954387}
 --- !u!54 &7600089620621922964
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1258,6 +1259,7 @@ MonoBehaviour:
   playerMotor: {fileID: 3084027559922614923}
   shootClip: {fileID: 8300000, guid: 0e5ec5d798406aa4699be8c44dd7599f, type: 3}
   reloadClip: {fileID: 8300000, guid: 5e7f633dda3117f4f90253f51ee065f0, type: 3}
+  Bolillaso: {fileID: 8300000, guid: dd00fcf930439a145b0f88c2f5e8670a, type: 3}
 --- !u!82 &7248275486453332661
 AudioSource:
   m_ObjectHideFlags: 0
