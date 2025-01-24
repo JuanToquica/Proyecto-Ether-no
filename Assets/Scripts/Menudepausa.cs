@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausarJuego : MonoBehaviour
 {
     public GameObject menuPausa;
     public bool juegoPausado = false;
+    public DrawMira mira;
+
 
     private void Update()
     {
@@ -23,6 +26,7 @@ public class PausarJuego : MonoBehaviour
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
         juegoPausado = false;
+        mira.JuegoDespausado();
     }
 
     public void Pausar()
@@ -30,16 +34,23 @@ public class PausarJuego : MonoBehaviour
         menuPausa.SetActive(true);
         Time.timeScale = 0f;
         juegoPausado = true;
+        mira.JuegoPausado();
     }
 
-    public void Restart()
+    public void Reiniciar()
     {
+        menuPausa.SetActive(false);
+        Scene escenaActual = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(escenaActual.name);
         Time.timeScale = 1f;
+        juegoPausado = false;
+        mira.JuegoDespausado();
     }
 
-    public void QuitGame()
+    public void Exit()
     {
-        Debug.Log("Quit Game");
-        Application.Quit();
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        juegoPausado = false;
     }
 }

@@ -18,6 +18,7 @@ public class WeaponManager : MonoBehaviour
     public bool isShieldDraw = false;
     public float stamina;
     public float maxStamina;
+    public PausarJuego pausarJuego;
 
 
     private void Update()
@@ -71,14 +72,17 @@ public class WeaponManager : MonoBehaviour
     }
     public void Attack()
     {
-        if (currentweapon == Weapon.Gun)
+        if (!pausarJuego.juegoPausado)
         {
-            gunScript.Shoot();
-        }
-        else if (currentweapon == Weapon.Bolillo)
-        {
-            bolilloScript.Attack();
-        }
+            if (currentweapon == Weapon.Gun)
+            {
+                gunScript.Shoot();
+            }
+            else if (currentweapon == Weapon.Bolillo)
+            {
+                bolilloScript.Attack();
+            }
+        }       
     }
     
     public void ReloadGun()
