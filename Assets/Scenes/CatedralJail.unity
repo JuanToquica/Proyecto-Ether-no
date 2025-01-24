@@ -916,12 +916,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48f624d547e399344ba4b5ade0104ca0, type: 3}
---- !u!1 &78962405 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8496251535488235528, guid: 48f624d547e399344ba4b5ade0104ca0,
-    type: 3}
-  m_PrefabInstance: {fileID: 78962404}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &88813139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,7 +2037,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuPausa
       value: 
-      objectReference: {fileID: 78962405}
+      objectReference: {fileID: 1628200508}
     - target: {fileID: 4815096499024873205, guid: 016c56369b427294b99a31628cae5650,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11162,6 +11156,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de2fe50ffddec7f4dad2293df07fcd23, type: 3}
+--- !u!1 &1628200508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8496251535488235528, guid: 48f624d547e399344ba4b5ade0104ca0,
+    type: 3}
+  m_PrefabInstance: {fileID: 78962404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1641245641
 PrefabInstance:
   m_ObjectHideFlags: 0
