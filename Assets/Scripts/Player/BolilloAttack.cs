@@ -47,6 +47,11 @@ public class BolilloAttack : MonoBehaviour
 
     public void SlashSound()
     {
+        AudioManager.instance.audioSource.volume = 1;
         AudioManager.instance.PlayClip(AudioManager.instance.Bolillaso);
+    }
+    public void ResetVolume()
+    {
+        AudioManager.instance.audioSource.volume = 0.4f;
     }
 }
