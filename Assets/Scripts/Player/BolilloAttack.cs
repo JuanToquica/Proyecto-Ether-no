@@ -7,8 +7,9 @@ public class BolilloAttack : MonoBehaviour
     public Animator animator;
     public float attackTime;
     public string targetTag;
+    public GameObject ParticleSystem;
     private GameObject slash;
-    public ActivateEffect activateEffect;
+
     public void Attack()
     {
         if (!animator.GetBool("Attack"))
@@ -29,18 +30,19 @@ public class BolilloAttack : MonoBehaviour
         }
     }
 
-    public void ExecuteSlash()
+    public void ActivateSlash()
     {
-        activateEffect.ExecuteSlash();
+        Vector3 pos = transform.position + new Vector3(-0.58f,-0.51f,0.131f);
+        Quaternion rot = transform.rotation * Quaternion.Euler(-52.4f,-3f,59.4f);
+        slash = GameObject.Instantiate(ParticleSystem,pos,rot);
+        Transform weaponTransform = transform.parent;
+        slash.transform.SetParent(weaponTransform, true);
+        slash.SetActive(false);
     }
 
-    public void SlashSound()
+    public void ExecuteSlash()
     {
-        AudioManager.instance.audioSource.volume = 1;
-        AudioManager.instance.PlayClip(AudioManager.instance.Bolillaso);
+        slash.SetActive(true);
     }
-    public void ResetVolume()
-    {
-        AudioManager.instance.audioSource.volume = 0.4f;
-    }
+
 }
