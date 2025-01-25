@@ -110,4 +110,13 @@ public class WeaponManager : MonoBehaviour
         }
              
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Municion"))
+        {
+            gunScript.RecogerMunicion();
+            Destroy(other.gameObject);
+        }
+    }
 }
