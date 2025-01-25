@@ -138,7 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa1aaf8b84c5844e9e1abb9a207d558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &5929823405525860821
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa1aaf8b84c5844e9e1abb9a207d558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &7407182689193291945
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +530,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 4047468947722799267}
   damageAmount: 10
+  municion: {fileID: 3615882615595577652, guid: f5cb5bbf8743866439207c47a7ba7e7a,
+    type: 3}
 --- !u!1 &7869991570886393159
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +706,8 @@ MonoBehaviour:
   attackTime: 1
   targetTag: Player
   ParticleSystem: {fileID: 0}
+  manager: {fileID: 0}
+  damage: 10
 --- !u!1 &7994253161732603220
 GameObject:
   m_ObjectHideFlags: 0

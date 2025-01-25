@@ -9,6 +9,7 @@ public enum Weapon { Gun, Bolillo, Changing}
 
 public class WeaponManager : MonoBehaviour
 {
+    public static WeaponManager instance;
     public Weapon currentweapon = Weapon.Gun;
     public GameObject gun;
     public GameObject bolillo;
@@ -32,6 +33,18 @@ public class WeaponManager : MonoBehaviour
     public Image bolilloIcon; // Img bolillo
     public TextMeshProUGUI activeWeaponText; // Texto arma activa
 
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Update()
     {
         staminaBar.size = stamina / maxStamina;

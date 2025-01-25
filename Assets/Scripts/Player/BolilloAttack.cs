@@ -9,6 +9,8 @@ public class BolilloAttack : MonoBehaviour
     public string targetTag;
     public GameObject ParticleSystem;
     private GameObject slash;
+    public WeaponManager manager;
+    public int damage;
 
     public void Attack()
     {
@@ -27,6 +29,10 @@ public class BolilloAttack : MonoBehaviour
         if (other.gameObject.CompareTag(targetTag) && animator.GetBool("Attack"))
         {
             Debug.Log($"Golpe a {targetTag}");
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            manager.TakeDamage(damage);
         }
     }
 

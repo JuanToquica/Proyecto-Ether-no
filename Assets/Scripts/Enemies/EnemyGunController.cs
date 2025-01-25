@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyGunController : MonoBehaviour
 {
     public Transform player;
-    public GunShoot gunScript;
+    public GunEnemy gunScript;
     public float shootTime;
 
     private void Start()
