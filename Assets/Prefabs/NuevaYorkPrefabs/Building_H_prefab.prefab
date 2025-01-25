@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33169220133966402}
   - component: {fileID: 23296808468585558}
   - component: {fileID: 5769517609695898763}
+  - component: {fileID: 2636428934236129912}
   m_Layer: 0
   m_Name: Building_H
   m_TagString: Untagged
@@ -114,6 +115,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21622542, y: 0.11692524, z: 0.19886774}
   m_Center: {x: 0.106269956, y: 0.033314805, z: 0.09943387}
+--- !u!64 &2636428934236129912
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333667526047858}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5478648276569158505, guid: a00d442b1ceb04441ae014d15c5f7adc, type: 3}
 --- !u!1 &1503822532645738
 GameObject:
   m_ObjectHideFlags: 0
