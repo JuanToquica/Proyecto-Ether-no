@@ -5,17 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public ChangeSceneScript changeScene;
-    public Canvas canvas;
-
-    private void Awake()
+   public void jugar()
     {
-        canvas.sortingOrder = 1;
-    }
-    public void jugar()
-    {     
-        changeScene.SceneChangeWithPortal();
-        canvas.sortingOrder = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
 
     public void salir()

@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PausarJuego : MonoBehaviour
 {
     public GameObject menuPausa;
     public bool juegoPausado = false;
-    public DrawMira mira;
-
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (juegoPausado)
                 Reanudar();
@@ -26,7 +23,6 @@ public class PausarJuego : MonoBehaviour
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
         juegoPausado = false;
-        mira.JuegoDespausado();
     }
 
     public void Pausar()
@@ -34,23 +30,16 @@ public class PausarJuego : MonoBehaviour
         menuPausa.SetActive(true);
         Time.timeScale = 0f;
         juegoPausado = true;
-        mira.JuegoPausado();
     }
 
-    public void Reiniciar()
+    public void Restart()
     {
-        menuPausa.SetActive(false);
-        Scene escenaActual = SceneManager.GetActiveScene(); 
-        SceneManager.LoadScene(escenaActual.name);
         Time.timeScale = 1f;
-        juegoPausado = false;
-        mira.JuegoDespausado();
     }
 
-    public void Exit()
+    public void QuitGame()
     {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
-        juegoPausado = false;
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
 }

@@ -4,9 +4,26 @@ using UnityEngine;
 
 public class BildBoard : MonoBehaviour
 {
-    public Transform cam;
+    private Transform cam;
+
+    private void Start()
+    {
+        // Busca automáticamente la cámara principal
+        if (Camera.main != null)
+        {
+            cam = Camera.main.transform;
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró ninguna cámara con el tag 'MainCamera'.");
+        }
+    }
+
     private void LateUpdate()
     {
-        transform.LookAt(transform.position + cam.forward);
+        if (cam != null)
+        {
+            transform.LookAt(transform.position + cam.forward);
+        }
     }
 }
