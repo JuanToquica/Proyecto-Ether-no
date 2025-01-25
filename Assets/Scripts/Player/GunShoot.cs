@@ -12,6 +12,7 @@ public class GunShoot : MonoBehaviour
     public float nextFireTime;
     public int gunCapacity = 15;
     public int ammo;
+    public int reserva;
 
     public ParticleSystem shootVFX;
     public GameObject impactParticles;
@@ -31,7 +32,11 @@ public class GunShoot : MonoBehaviour
                 nextFireTime = Time.time + shootTime;
                 ammo--;
                 ConfirmImpact();
-            }            
+            }
+        }
+        else
+        {
+            AudioManager.instance.PlayClip(AudioManager.instance.noAmmo);
         }
     }
 
@@ -73,7 +78,7 @@ public class GunShoot : MonoBehaviour
         if (animation == "fire")
         {
             yield return new WaitForSeconds(shootTime);
-            if (ammo <= 0)
+            if (ammo <= 0 && reserva > 0)
             {
                 StartCoroutine(GunReload());
             }
@@ -89,13 +94,26 @@ public class GunShoot : MonoBehaviour
 
     public IEnumerator GunReload()
     {
-        if (ammo < gunCapacity && !animator.GetBool("isOutOfAmmo"))
+        if (ammo < gunCapacity && !animator.GetBool("isOutOfAmmo") && reserva>0)
         {   
             StartAnimation("isOutOfAmmo");
             AudioManager.instance.audioSource.pitch = 0.5f;
             AudioManager.instance.PlayClip(AudioManager.instance.reloadClip);
             yield return new WaitForSeconds(1.51f);
-            ammo = gunCapacity;          
+            for (int i = ammo; i <= gunCapacity; i++)
+            {
+                ammo ++;
+                reserva--;
+                if (reserva <= 0)
+                {
+                    break;
+                }
+            }        
         }       
+    }
+
+    public void RecogerMunicion()
+    {
+        reserva += 10;
     }
 }

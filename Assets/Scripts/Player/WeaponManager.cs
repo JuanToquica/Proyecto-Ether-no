@@ -36,7 +36,7 @@ public class WeaponManager : MonoBehaviour
     {
         staminaBar.size = stamina / maxStamina;
         healthBar.size = health / maxHealth;
-        // Actualizar elementos del HUD según el arma activa
+        // Actualizar elementos del HUD segï¿½n el arma activa
         UpdateWeaponHUD();
 
         if (isShieldDraw)
@@ -126,13 +126,22 @@ public class WeaponManager : MonoBehaviour
         }
              
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Municion"))
+        {
+            gunScript.RecogerMunicion();
+            Destroy(other.gameObject);
+        }
+    }
     private void UpdateWeaponHUD()
     {
-        // Muestro que arma está activa
+        // Muestro que arma estï¿½ activa
         if (currentweapon == Weapon.Gun)
         {
             activeWeaponText.text = "Pistola";
-            ammoText.text = $"{gunScript.ammo}/{gunScript.gunCapacity}"; // Actualizar munición
+            ammoText.text = $"{gunScript.ammo}/{gunScript.gunCapacity}"; // Actualizar municiï¿½n
         }
         else if (currentweapon == Weapon.Bolillo)
         {
@@ -157,7 +166,7 @@ public class WeaponManager : MonoBehaviour
 
 private void UpdateHealthBar()
 {
-    // Actualizar el tamaño de la barra de salud
+    // Actualizar el tamaï¿½o de la barra de salud
     healthBar.size = health / maxHealth;
 }
 
@@ -175,7 +184,7 @@ private void PlayerDeath()
 
         if (health > maxHealth)
         {
-            health = maxHealth; // Evitar que la salud supere el máximo
+            health = maxHealth; // Evitar que la salud supere el mï¿½ximo
         }
 
         UpdateHealthBar(); // Actualiza la barra de salud

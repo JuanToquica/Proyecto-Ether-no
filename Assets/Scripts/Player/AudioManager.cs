@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip shootClip;
     public AudioClip reloadClip;
+    public AudioClip Bolillaso;
+    public AudioClip noAmmo;
 
     private void Awake()
     {
