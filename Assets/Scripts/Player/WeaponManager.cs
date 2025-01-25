@@ -178,7 +178,7 @@ private void PlayerDeath()
     
     Debug.Log("Jugador eliminado. Game Over.");
     // ir a pantalla de inicio o reiniciar el nivel
-     SceneManager.LoadScene("MainMenu");
+     SceneManager.LoadScene("GameOver");
 }
 
     public void Heal(float healAmount)
