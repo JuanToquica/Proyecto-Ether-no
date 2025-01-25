@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public HealthBar healthBar; // Referencia al script de la barra de vida
-    public float damageAmount = 10f; // Daño recibido por golpe
-
+    public float damageAmount = 20f; // Daño recibido por golpe
+    public GameObject municion;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("weapon"))
@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemigo derrotado");
+        Instantiate(municion,transform.position,transform.rotation);
         Destroy(gameObject);
     }
 
