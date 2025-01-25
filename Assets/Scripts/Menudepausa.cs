@@ -1,10 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PausarJuego : MonoBehaviour
@@ -12,7 +8,7 @@ public class PausarJuego : MonoBehaviour
     public GameObject menuPausa;
     public bool juegoPausado = false;
     public DrawMira mira;
-
+    public UnlockMouse unlockmouse;
 
     private void Update()
     {
@@ -35,6 +31,7 @@ public class PausarJuego : MonoBehaviour
 
     public void Pausar()
     {
+        unlockmouse.UnlockM();
         menuPausa.SetActive(true);
         Time.timeScale = 0f;
         juegoPausado = true;
@@ -53,6 +50,7 @@ public class PausarJuego : MonoBehaviour
 
     public void Exit()
     {
+        unlockmouse.UnlockM();
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
         juegoPausado = false;

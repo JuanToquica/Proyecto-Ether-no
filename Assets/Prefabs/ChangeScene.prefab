@@ -322,3 +322,4 @@ MonoBehaviour:
   audioSource: {fileID: 525348043477523036}
   flash: {fileID: 5314609926180106060}
   flashSpeed: 1.1
+  canvas: {fileID: 1012456341558937617}
