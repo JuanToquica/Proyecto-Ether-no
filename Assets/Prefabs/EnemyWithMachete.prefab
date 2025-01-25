@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa1aaf8b84c5844e9e1abb9a207d558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &5929823405525860821
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa1aaf8b84c5844e9e1abb9a207d558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &7407182689193291945
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,8 +359,6 @@ GameObject:
   - component: {fileID: 1265489319642472891}
   - component: {fileID: 3504225413407201629}
   - component: {fileID: 8401142185266683685}
-  - component: {fileID: 3420051976622624096}
-  - component: {fileID: 1998941964305502701}
   m_Layer: 0
   m_Name: EnemyWithMachete
   m_TagString: Enemy
@@ -532,55 +532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 4047468947722799267}
   damageAmount: 10
---- !u!114 &3420051976622624096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7407182689193291945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd0c38ade9334948966c760b0c92c13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  enemyType: 0
-  projectilePrefab: {fileID: 2701861797606469851, guid: 31ed09504fd421c4a912e61cde23b260,
-    type: 3}
-  player: {fileID: 0}
-  detectionRange: 11.43
-  attackRange: 6.01
-  rangedAttackDistance: 10.39
-  visionAngle: 115.8
-  damage: 10
-  attackCooldown: 0.58
-  animator: {fileID: 0}
---- !u!195 &1998941964305502701
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7407182689193291945}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.49999994
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &7869991570886393159
 GameObject:
   m_ObjectHideFlags: 0
