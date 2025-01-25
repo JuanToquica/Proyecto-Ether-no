@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CatedralJail.unity
     guid: 4a77a783eaf2b2e4789cf22c681192df
+  - enabled: 1
+    path: Assets/Scenes/GameComplete.unity
+    guid: d0e843d9bddeb374295b1bf6ba11cef3
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: cbf29aa64a623774183269802ce9b105
   m_configObjects: {}
