@@ -544,14 +544,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd0c38ade9334948966c760b0c92c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolPoints: []
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   enemyType: 0
-  player: {fileID: 2842391613434279545, guid: de2027b24ca267a479738cd9e1daea50, type: 3}
-  detectionRange: 10
-  attackRange: 2
-  rangedAttackDistance: 7
+  projectilePrefab: {fileID: 2701861797606469851, guid: 31ed09504fd421c4a912e61cde23b260,
+    type: 3}
+  player: {fileID: 0}
+  detectionRange: 11.43
+  attackRange: 6.01
+  rangedAttackDistance: 10.39
+  visionAngle: 115.8
   damage: 10
-  attackCooldown: 1.5
+  attackCooldown: 0.58
   animator: {fileID: 0}
 --- !u!195 &1998941964305502701
 NavMeshAgent:

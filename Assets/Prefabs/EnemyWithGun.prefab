@@ -721,13 +721,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolPoints: []
   enemyType: 1
-  projectilePrefab: {fileID: 3384871071674941444, guid: 0bdc3f62aef365148bf5f6a9eb07c50f,
+  projectilePrefab: {fileID: 2701861797606469851, guid: 31ed09504fd421c4a912e61cde23b260,
     type: 3}
   player: {fileID: 0}
   detectionRange: 10
   attackRange: 2
   rangedAttackDistance: 7
-  visionAngle: 90
+  visionAngle: 360.3
   damage: 10
   attackCooldown: 1.5
   animator: {fileID: 0}

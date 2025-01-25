@@ -150,19 +150,22 @@ public class WeaponManager : MonoBehaviour
         }
     }
     public void TakeDamage(float damageAmount)
-{
-    // Reducir la salud del jugador
-    health -= damageAmount;
-
-    if (health < 0)
     {
-        health = 0;
-        Debug.Log("Jugador muerto");
-         // falta crear bien el metodo para que cambie de pantalla y haga todo el show de la muerte
-            PlayerDeath();
+        if (!isShieldDraw)
+        {
+            // Reducir la salud del jugador
+            health -= damageAmount;
+
+            if (health < 0)
+            {
+                health = 0;
+                Debug.Log("Jugador muerto");
+                // falta crear bien el metodo para que cambie de pantalla y haga todo el show de la muerte
+                PlayerDeath();
+            }
+            UpdateHealthBar();
+        }
     }
-    UpdateHealthBar();
-}
 
 private void UpdateHealthBar()
 {
