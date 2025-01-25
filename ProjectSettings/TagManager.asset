@@ -8,6 +8,7 @@ TagManager:
   - weapon
   - Environment
   - bridge
+  - Municion
   layers:
   - Default
   - TransparentFX
