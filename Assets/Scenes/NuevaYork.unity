@@ -3266,10 +3266,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_A_prefab (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1164899596817984, guid: ba33f5f0a254c9443956b40146028648, type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 4872864705531724, guid: ba33f5f0a254c9443956b40146028648, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.779911
@@ -3310,13 +3306,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 64759282579595148, guid: ba33f5f0a254c9443956b40146028648,
-        type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 64759282579595148, guid: ba33f5f0a254c9443956b40146028648, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3396,10 +3386,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_A_prefab (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1164899596817984, guid: ba33f5f0a254c9443956b40146028648, type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 4872864705531724, guid: ba33f5f0a254c9443956b40146028648, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.47
@@ -3440,13 +3426,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 64759282579595148, guid: ba33f5f0a254c9443956b40146028648,
-        type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 64759282579595148, guid: ba33f5f0a254c9443956b40146028648, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15385,6 +15365,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64982121123418654, guid: a6cd0c657da915144bd367d385c0fc31,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6926034509358381367, guid: f435b20fb549cd2488c72b3a5253aeae,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21629,10 +21615,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sideway 10 prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 1341532629177192, guid: f48ca42bbf7370343a33a9e87b1d9fdb, type: 3}
-      propertyPath: m_TagString
-      value: Environment
-      objectReference: {fileID: 0}
     - target: {fileID: 4278621369827266, guid: f48ca42bbf7370343a33a9e87b1d9fdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.25
@@ -21673,11 +21655,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 23161907983861340, guid: f48ca42bbf7370343a33a9e87b1d9fdb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d7a5e0fd76b3b814eb25f229967ce0d3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26472,7 +26449,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: f98ff50ea1b6a7140860381375972449, type: 3}
+  m_Mesh: {fileID: -9078885000931372180, guid: f98ff50ea1b6a7140860381375972449, type: 3}
 --- !u!23 &2034292146
 MeshRenderer:
   m_ObjectHideFlags: 0
