@@ -24526,7 +24526,7 @@ MonoBehaviour:
   m_Script: {fileID: 365290288, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectid: 
+  projectid: 173699566556527
   updateInt: 10
   newSplatMapRestoreCode: 0
   toolbarInt: 0
@@ -26548,31 +26548,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 530026549}
-    - target: {fileID: 878072022442336819, guid: 48f624d547e399344ba4b5ade0104ca0,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Reiniciar
-      objectReference: {fileID: 0}
     - target: {fileID: 1739940471610573346, guid: 48f624d547e399344ba4b5ade0104ca0,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 530026549}
-    - target: {fileID: 1739940471610573346, guid: 48f624d547e399344ba4b5ade0104ca0,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Exit
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792595171924473877, guid: 48f624d547e399344ba4b5ade0104ca0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 530026549}
     - target: {fileID: 4792595171924473877, guid: 48f624d547e399344ba4b5ade0104ca0,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Reanudar
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 530026549}
     - target: {fileID: 5444729102970508164, guid: 48f624d547e399344ba4b5ade0104ca0,
         type: 3}
       propertyPath: m_Name
