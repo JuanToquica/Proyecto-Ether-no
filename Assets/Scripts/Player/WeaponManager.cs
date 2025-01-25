@@ -147,6 +147,7 @@ public class WeaponManager : MonoBehaviour
             gunScript.RecogerMunicion();
             Destroy(other.gameObject);
         }
+        
     }
     private void UpdateWeaponHUD()
     {
@@ -202,7 +203,6 @@ private void PlayerDeath()
         {
             health = maxHealth; // Evitar que la salud supere el m�ximo
         }
-
         UpdateHealthBar(); // Actualiza la barra de salud
         Debug.Log($"Jugador curado: +{healAmount} de salud. Salud actual: {health}");
     }

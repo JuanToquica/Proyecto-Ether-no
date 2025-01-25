@@ -1623,7 +1623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa1aaf8b84c5844e9e1abb9a207d558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &521370628378296231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,6 +3770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1298754723348059801}
   damageAmount: 10
+  municion: {fileID: 0}
 --- !u!54 &5439422983186551921
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4742,7 +4742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa1aaf8b84c5844e9e1abb9a207d558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1160005240}
 --- !u!4 &8361998443747595968
 Transform:
   m_ObjectHideFlags: 0
